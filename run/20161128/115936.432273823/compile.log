@@ -1,0 +1,48 @@
+2016-11-28 11:59:36.470866 ‘run/LATEST.COMPILE’ -> ‘20161128/115936.432273823’
+2016-11-28 11:59:36.470989 ‘run/RUNNING.COMPILE’ -> ‘20161128/115936.432273823’
+2016-11-28 11:59:36.471006 Parsing DeepDive application (/home/ehsan/company) to generate:
+2016-11-28 11:59:36.471020  run/compiled/schema.json
+2016-11-28 11:59:36.471033   from app.ddlog
+2016-11-28 11:59:37.003678  run/compiled/deepdive.conf
+2016-11-28 11:59:37.003804   from app.ddlog
+2016-11-28 11:59:37.636419   from deepdive.conf
+2016-11-28 11:59:37.639482  run/compiled/deepdive.conf.json
+2016-11-28 11:59:38.006102 Performing sanity checks on run/compiled/deepdive.conf.json:
+2016-11-28 11:59:38.051095  checking if input_extractors_well_defined
+2016-11-28 11:59:38.051211  checking if input_schema_wellformed
+2016-11-28 11:59:38.051454 Normalizing and adding built-in processes to the data flow to compile:
+2016-11-28 11:59:38.051924  run/compiled/config-0.00-init_objects.json
+2016-11-28 11:59:38.065757  run/compiled/config-0.01-parse_calibration.json
+2016-11-28 11:59:38.076447  run/compiled/config-0.01-parse_schema.json
+2016-11-28 11:59:38.102621  run/compiled/config-0.51-add_init_app.json
+2016-11-28 11:59:38.112732  run/compiled/config-0.52-input_loader.json
+2016-11-28 11:59:38.128776  run/compiled/config-1.00-qualified_names.json
+2016-11-28 11:59:38.150131  run/compiled/config-1.01-parse_inference_rules.json
+2016-11-28 11:59:38.191801  run/compiled/config-2.01-grounding.json
+2016-11-28 11:59:38.399800  run/compiled/config-2.02-learning_inference.json
+2016-11-28 11:59:38.425608  run/compiled/config-2.03-calibration_plots.json
+2016-11-28 11:59:38.441679  run/compiled/config-9.98-ensure_init_app.json
+2016-11-28 11:59:38.455032  run/compiled/config-9.99-dependencies.json
+2016-11-28 11:59:38.470852  run/compiled/config.json
+2016-11-28 11:59:38.472074 Validating run/compiled/config.json:
+2016-11-28 11:59:38.540243  checking if compiled_base_relations_have_input_data
+2016-11-28 11:59:38.540327  checking if compiled_dependencies_correct
+2016-11-28 11:59:38.540341  checking if compiled_input_output_well_defined
+2016-11-28 11:59:38.540355  checking if compiled_output_uniquely_defined
+2016-11-28 11:59:38.540580 Compiling executable code into:
+2016-11-28 11:59:38.540867  run/compiled/code-cmd_extractor.json
+2016-11-28 11:59:38.555795  run/compiled/code-dataflow_dot.json
+2016-11-28 11:59:38.580000  run/compiled/code-Makefile.json
+2016-11-28 11:59:38.606974  run/compiled/code-sql_extractor.json
+2016-11-28 11:59:38.621764  run/compiled/code-tsv_extractor.json
+2016-11-28 11:59:38.639809 Generating files:
+2016-11-28 11:59:38.657003  run/process/init/app/run.sh
+2016-11-28 11:59:38.663257  run/process/init/relation/articles/run.sh
+2016-11-28 11:59:38.669301  run/dataflow.dot
+2016-11-28 11:59:38.674494  run/Makefile
+2016-11-28 11:59:38.679945  run/process/ext_company_mention_by_map_company_mention/run.sh
+2016-11-28 11:59:38.685866  run/process/ext_sentences_by_nlp_markup/run.sh
+2016-11-28 11:59:38.717789  run/dataflow.svg
+2016-11-28 11:59:38.718546   (file:///home/ehsan/company/run/dataflow.svg)
+2016-11-28 11:59:38.719861 ‘run/compiled’ -> ‘run/compiled~’
+2016-11-28 11:59:38.721124 ‘run/compiled’ -> ‘20161128/115936.432273823’

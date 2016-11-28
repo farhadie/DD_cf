@@ -1,0 +1,11 @@
+2016-11-28 11:54:26.695870 ‘run/LATEST.COMPILE’ -> ‘20161128/115426.656862192’
+2016-11-28 11:54:26.695994 ‘run/RUNNING.COMPILE’ -> ‘20161128/115426.656862192’
+2016-11-28 11:54:26.696011 Parsing DeepDive application (/home/ehsan/company) to generate:
+2016-11-28 11:54:26.696025  run/compiled/schema.json
+2016-11-28 11:54:26.696037   from app.ddlog
+2016-11-28 11:54:27.219205  run/compiled/deepdive.conf
+2016-11-28 11:54:27.219325   from app.ddlog
+2016-11-28 11:54:27.833022 [error] function "map_person_mention" is not defined
+2016-11-28 11:54:27.833135 person_mention += map_person_mention(doc_id, sentence_index, tokens, ner_tags) :-
+2016-11-28 11:54:27.833150     sentences(doc_id, sentence_index, _, tokens, _, _, ner_tags, _, _, _).
+2016-11-28 11:54:27.833167 

@@ -1,0 +1,33 @@
+2016-11-28 11:53:33.832231 ‘run/LATEST.COMPILE’ -> ‘20161128/115333.793477787’
+2016-11-28 11:53:33.832354 ‘run/RUNNING.COMPILE’ -> ‘20161128/115333.793477787’
+2016-11-28 11:53:33.832372 Parsing DeepDive application (/home/ehsan/company) to generate:
+2016-11-28 11:53:33.832386  run/compiled/schema.json
+2016-11-28 11:53:33.832398   from app.ddlog
+2016-11-28 11:53:34.350130  run/compiled/deepdive.conf
+2016-11-28 11:53:34.350249   from app.ddlog
+2016-11-28 11:53:34.976682   from deepdive.conf
+2016-11-28 11:53:34.979730  run/compiled/deepdive.conf.json
+2016-11-28 11:53:35.336376 Performing sanity checks on run/compiled/deepdive.conf.json:
+2016-11-28 11:53:35.381740  checking if input_extractors_well_defined
+2016-11-28 11:53:35.381822  checking if input_schema_wellformed
+2016-11-28 11:53:35.382050 Normalizing and adding built-in processes to the data flow to compile:
+2016-11-28 11:53:35.382514  run/compiled/config-0.00-init_objects.json
+2016-11-28 11:53:35.396201  run/compiled/config-0.01-parse_calibration.json
+2016-11-28 11:53:35.406759  run/compiled/config-0.01-parse_schema.json
+2016-11-28 11:53:35.432635  run/compiled/config-0.51-add_init_app.json
+2016-11-28 11:53:35.442448  run/compiled/config-0.52-input_loader.json
+2016-11-28 11:53:35.458344  run/compiled/config-1.00-qualified_names.json
+2016-11-28 11:53:35.479298  run/compiled/config-1.01-parse_inference_rules.json
+2016-11-28 11:53:35.520560  run/compiled/config-2.01-grounding.json
+2016-11-28 11:53:35.727008  run/compiled/config-2.02-learning_inference.json
+2016-11-28 11:53:35.752473  run/compiled/config-2.03-calibration_plots.json
+2016-11-28 11:53:35.768295  run/compiled/config-9.98-ensure_init_app.json
+2016-11-28 11:53:35.781614  run/compiled/config-9.99-dependencies.json
+2016-11-28 11:53:35.797114  run/compiled/config.json
+2016-11-28 11:53:35.798234 Validating run/compiled/config.json:
+2016-11-28 11:53:35.871342  checking if compiled_base_relations_have_input_data
+2016-11-28 11:53:35.871416  [ERROR] base relation 'company_mention' must have data to load at: input/company_mention.*
+2016-11-28 11:53:35.871432  [ERROR] FAILED deepdive check compiled_base_relations_have_input_data
+2016-11-28 11:53:35.871446  checking if compiled_dependencies_correct
+2016-11-28 11:53:35.871459  checking if compiled_input_output_well_defined
+2016-11-28 11:53:35.871472  checking if compiled_output_uniquely_defined

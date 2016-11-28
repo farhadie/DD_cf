@@ -1,0 +1,43 @@
+2016-11-28 00:48:51.517478 # on diuflx75: deepdive do articles
+2016-11-28 00:48:51.517596 # run/20161128/004847.873221868/plan.sh
+2016-11-28 00:48:51.517613 # execution plan for data/articles
+2016-11-28 00:48:51.517626 
+2016-11-28 00:48:51.517639 ## process/init/app ##########################################################
+2016-11-28 00:48:51.517652 # Done: N/A
+2016-11-28 00:48:51.517665 process/init/app/run.sh
+2016-11-28 00:48:51.517678 ++ dirname process/init/app/run.sh
+2016-11-28 00:48:51.517690 + cd process/init/app
+2016-11-28 00:48:51.517703 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2016-11-28 00:48:51.517716 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/app
+2016-11-28 00:48:51.517728 + deepdive db init
+2016-11-28 00:48:51.622272 dropdb: database removal failed: ERROR:  database "deepdive_company_ehsan" does not exist
+2016-11-28 00:48:52.316630 + cd /home/ehsan/company
+2016-11-28 00:48:52.316738 + [[ -r schema.sql ]]
+2016-11-28 00:48:52.316754 + [[ -x input/init.sh ]]
+2016-11-28 00:48:52.317076 mark_done process/init/app
+2016-11-28 00:48:52.324207 ##############################################################################
+2016-11-28 00:48:52.324262 
+2016-11-28 00:48:52.324280 
+2016-11-28 00:48:52.324294 ## process/init/relation/articles ############################################
+2016-11-28 00:48:52.324306 # Done: N/A
+2016-11-28 00:48:52.324319 process/init/relation/articles/run.sh
+2016-11-28 00:48:52.326813 ++ dirname process/init/relation/articles/run.sh
+2016-11-28 00:48:52.327666 + cd process/init/relation/articles
+2016-11-28 00:48:52.327815 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2016-11-28 00:48:52.327831 + DEEPDIVE_CURRENT_PROCESS_NAME=process/init/relation/articles
+2016-11-28 00:48:52.327846 + deepdive create table articles
+2016-11-28 00:48:52.466706 NOTICE:  table "articles" does not exist, skipping
+2016-11-28 00:48:52.470844 CREATE TABLE
+2016-11-28 00:48:52.471970 + deepdive load articles
+2016-11-28 00:48:52.532915 Loading articles from input/articles.tsv (tsv format)
+2016-11-28 00:48:53.105126 mark_done process/init/relation/articles
+2016-11-28 00:48:53.111671 ##############################################################################
+2016-11-28 00:48:53.111739 
+2016-11-28 00:48:53.111754 
+2016-11-28 00:48:53.111768 ## data/articles #############################################################
+2016-11-28 00:48:53.111780 # Done: N/A
+2016-11-28 00:48:53.111793 # no-op
+2016-11-28 00:48:53.111806 mark_done data/articles
+2016-11-28 00:48:53.117518 ##############################################################################
+2016-11-28 00:48:53.117570 
+2016-11-28 00:48:53.117584 

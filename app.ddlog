@@ -1,0 +1,103 @@
+## Random variable to predict #################################################
+
+# to be filled
+
+## Input Data #################################################################
+
+@source
+articles(
+    @key
+    @distributed_by
+    id text,
+    @searchable
+    content text
+).
+
+
+## NLP markup #################################################################
+@source
+sentences(
+    @key
+    @distributed_by
+    # XXX This breaks the search index.  @source should not be derived from another @source
+    #@references(relation="articles", column="id")
+    doc_id         text,
+    @key
+    sentence_index int,
+    @searchable
+    sentence_text  text,
+    tokens         text[],
+    lemmas         text[],
+    pos_tags       text[],
+    ner_tags       text[],
+    doc_offsets    int[],
+    dep_types      text[],
+    dep_tokens     int[]
+).
+
+function nlp_markup over (
+        doc_id text,
+        content text
+    ) returns rows like sentences
+    implementation "udf/nlp_markup.sh" handles tsv lines.
+
+sentences += nlp_markup(doc_id, content) :-
+    articles(doc_id, content).
+
+
+## Candidate mapping ##########################################################
+
+@extraction
+company_mention(
+    @key
+    mention_id text,
+    @searchable
+    mention_text text,
+    @distributed_by
+    @references(relation="sentences", column="doc_id",         alias="appears_in")
+    doc_id text,
+    @references(relation="sentences", column="sentence_index", alias="appears_in")
+    sentence_index int,
+    begin_index int,
+    end_index int
+).
+
+function map_company_mention over (
+        doc_id text,
+        sentence_index int,
+        tokens text[],
+        ner_tags text[]
+    ) returns rows like company_mention
+    implementation "udf/map_company_mention.py" handles tsv lines.
+
+company_mention += map_company_mention(
+    doc_id, sentence_index, tokens, ner_tags
+) :- sentences(doc_id, sentence_index, _, tokens, _, _, ner_tags, _, _, _).
+
+## sentences with a company and a person name
+founder_candidate(
+    c_id text,
+    c_name text,
+    p_id text,
+    p_name text
+).
+
+
+## Feature Extraction #########################################################
+
+
+
+
+## Distant Supervision ########################################################
+
+
+
+
+###############################################################################
+
+## Inference Rules ############################################################
+
+# Features
+
+
+# Inference rule: 

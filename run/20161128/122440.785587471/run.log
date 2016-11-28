@@ -1,0 +1,82 @@
+2016-11-28 12:24:42.272565 # on diuflx75: deepdive do company_mention
+2016-11-28 12:24:42.272692 # run/20161128/122440.785587471/plan.sh
+2016-11-28 12:24:42.272708 # execution plan for data/company_mention
+2016-11-28 12:24:42.272722 
+2016-11-28 12:24:42.272735 : ## process/init/app ##########################################################
+2016-11-28 12:24:42.272748 : # Done: 2016-11-28T00:48:52+0100 (11h 35m 48s ago)
+2016-11-28 12:24:42.272761 : process/init/app/run.sh
+2016-11-28 12:24:42.272774 : mark_done process/init/app
+2016-11-28 12:24:42.272786 : ##############################################################################
+2016-11-28 12:24:42.272808 
+2016-11-28 12:24:42.272827 
+2016-11-28 12:24:42.272844 : ## process/init/relation/articles ############################################
+2016-11-28 12:24:42.272861 : # Done: 2016-11-28T00:48:53+0100 (11h 35m 47s ago)
+2016-11-28 12:24:42.272874 : process/init/relation/articles/run.sh
+2016-11-28 12:24:42.272887 : mark_done process/init/relation/articles
+2016-11-28 12:24:42.272900 : ##############################################################################
+2016-11-28 12:24:42.272932 
+2016-11-28 12:24:42.272952 
+2016-11-28 12:24:42.272966 : ## data/articles #############################################################
+2016-11-28 12:24:42.272981 : # Done: 2016-11-28T00:48:53+0100 (11h 35m 47s ago)
+2016-11-28 12:24:42.272996 : # no-op
+2016-11-28 12:24:42.273010 : mark_done data/articles
+2016-11-28 12:24:42.273025 : ##############################################################################
+2016-11-28 12:24:42.273039 
+2016-11-28 12:24:42.273054 
+2016-11-28 12:24:42.273069 : ## process/ext_sentences_by_nlp_markup #######################################
+2016-11-28 12:24:42.273083 : # Done: 2016-11-28T11:27:51+0100 (56m 49s ago)
+2016-11-28 12:24:42.273098 : process/ext_sentences_by_nlp_markup/run.sh
+2016-11-28 12:24:42.273112 : mark_done process/ext_sentences_by_nlp_markup
+2016-11-28 12:24:42.273127 : ##############################################################################
+2016-11-28 12:24:42.273142 
+2016-11-28 12:24:42.273157 
+2016-11-28 12:24:42.273172 : ## data/sentences ############################################################
+2016-11-28 12:24:42.273187 : # Done: 2016-11-28T11:27:51+0100 (56m 49s ago)
+2016-11-28 12:24:42.273201 : # no-op
+2016-11-28 12:24:42.273216 : mark_done data/sentences
+2016-11-28 12:24:42.273230 : ##############################################################################
+2016-11-28 12:24:42.273245 
+2016-11-28 12:24:42.273259 
+2016-11-28 12:24:42.273274 ## process/ext_company_mention_by_map_company_mention ########################
+2016-11-28 12:24:42.273289 # Done: N/A
+2016-11-28 12:24:42.273303 process/ext_company_mention_by_map_company_mention/run.sh
+2016-11-28 12:24:42.273318 ++ dirname process/ext_company_mention_by_map_company_mention/run.sh
+2016-11-28 12:24:42.273332 + cd process/ext_company_mention_by_map_company_mention
+2016-11-28 12:24:42.273347 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_company_mention_by_map_company_mention
+2016-11-28 12:24:42.273362 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_company_mention_by_map_company_mention
+2016-11-28 12:24:42.273377 + export DEEPDIVE_LOAD_FORMAT=tsv
+2016-11-28 12:24:42.273391 + DEEPDIVE_LOAD_FORMAT=tsv
+2016-11-28 12:24:42.273406 + deepdive compute execute 'input_sql= SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2016-11-28 12:24:42.273421 FROM sentences R0
+2016-11-28 12:24:42.273436         
+2016-11-28 12:24:42.273450           ' 'command="$DEEPDIVE_APP"/udf/map_company_mention.py' output_relation=company_mention
+2016-11-28 12:24:42.289202 Executing with the following configuration:
+2016-11-28 12:24:42.289277  DEEPDIVE_NUM_PROCESSES=23
+2016-11-28 12:24:42.289292  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2016-11-28 12:24:42.289305  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2016-11-28 12:24:42.289383  output_relation_tmp=dd_tmp_company_mention
+2016-11-28 12:24:42.289403 
+2016-11-28 12:24:42.455484 CREATE TABLE
+2016-11-28 12:24:42.696231 CREATE TABLE
+2016-11-28 12:24:42.841432 unloading to feed_processes-1: ' SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2016-11-28 12:24:42.841555 FROM sentences R0
+2016-11-28 12:24:42.841570         
+2016-11-28 12:24:42.841583           '
+2016-11-28 12:24:42.879434 Loading dd_tmp_company_mention from output_computed-1 (tsv format)
+2016-11-28 12:24:43.839800 Replacing company_mention with dd_tmp_company_mention
+2016-11-28 12:24:43.944933 DROP TABLE
+2016-11-28 12:24:44.050986 ALTER TABLE
+2016-11-28 12:24:44.157202 ALTER TABLE
+2016-11-28 12:24:44.264855 DROP TABLE
+2016-11-28 12:24:45.099882 ANALYZE
+2016-11-28 12:24:45.104328 mark_done process/ext_company_mention_by_map_company_mention
+2016-11-28 12:24:45.111115 ##############################################################################
+2016-11-28 12:24:45.111176 
+2016-11-28 12:24:45.111193 
+2016-11-28 12:24:45.111207 ## data/company_mention ######################################################
+2016-11-28 12:24:45.111220 # Done: N/A
+2016-11-28 12:24:45.111232 # no-op
+2016-11-28 12:24:45.111244 mark_done data/company_mention
+2016-11-28 12:24:45.116974 ##############################################################################
+2016-11-28 12:24:45.117034 
+2016-11-28 12:24:45.117047 

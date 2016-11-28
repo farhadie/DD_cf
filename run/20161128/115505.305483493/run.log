@@ -1,0 +1,111 @@
+2016-11-28 11:55:08.012768 # on diuflx75: deepdive do company_mention
+2016-11-28 11:55:08.012892 # run/20161128/115505.305483493/plan.sh
+2016-11-28 11:55:08.012909 # execution plan for data/company_mention
+2016-11-28 11:55:08.012922 
+2016-11-28 11:55:08.012935 : ## process/init/app ##########################################################
+2016-11-28 11:55:08.012949 : # Done: 2016-11-28T00:48:52+0100 (11h 6m 13s ago)
+2016-11-28 11:55:08.012961 : process/init/app/run.sh
+2016-11-28 11:55:08.012974 : mark_done process/init/app
+2016-11-28 11:55:08.012987 : ##############################################################################
+2016-11-28 11:55:08.013009 
+2016-11-28 11:55:08.013022 
+2016-11-28 11:55:08.013035 : ## process/init/relation/articles ############################################
+2016-11-28 11:55:08.013048 : # Done: 2016-11-28T00:48:53+0100 (11h 6m 12s ago)
+2016-11-28 11:55:08.013061 : process/init/relation/articles/run.sh
+2016-11-28 11:55:08.013079 : mark_done process/init/relation/articles
+2016-11-28 11:55:08.013097 : ##############################################################################
+2016-11-28 11:55:08.013110 
+2016-11-28 11:55:08.013123 
+2016-11-28 11:55:08.013136 : ## data/articles #############################################################
+2016-11-28 11:55:08.013149 : # Done: 2016-11-28T00:48:53+0100 (11h 6m 12s ago)
+2016-11-28 11:55:08.013162 : # no-op
+2016-11-28 11:55:08.013179 : mark_done data/articles
+2016-11-28 11:55:08.013194 : ##############################################################################
+2016-11-28 11:55:08.013207 
+2016-11-28 11:55:08.013220 
+2016-11-28 11:55:08.013233 : ## process/ext_sentences_by_nlp_markup #######################################
+2016-11-28 11:55:08.013246 : # Done: 2016-11-28T11:27:51+0100 (27m 14s ago)
+2016-11-28 11:55:08.013261 : process/ext_sentences_by_nlp_markup/run.sh
+2016-11-28 11:55:08.013274 : mark_done process/ext_sentences_by_nlp_markup
+2016-11-28 11:55:08.013287 : ##############################################################################
+2016-11-28 11:55:08.013299 
+2016-11-28 11:55:08.013313 
+2016-11-28 11:55:08.013326 : ## data/sentences ############################################################
+2016-11-28 11:55:08.013341 : # Done: 2016-11-28T11:27:51+0100 (27m 14s ago)
+2016-11-28 11:55:08.013356 : # no-op
+2016-11-28 11:55:08.013369 : mark_done data/sentences
+2016-11-28 11:55:08.013382 : ##############################################################################
+2016-11-28 11:55:08.013395 
+2016-11-28 11:55:08.013408 
+2016-11-28 11:55:08.013422 ## process/ext_company_mention_by_map_company_mention ########################
+2016-11-28 11:55:08.013435 # Done: N/A
+2016-11-28 11:55:08.013448 process/ext_company_mention_by_map_company_mention/run.sh
+2016-11-28 11:55:08.013461 ++ dirname process/ext_company_mention_by_map_company_mention/run.sh
+2016-11-28 11:55:08.013474 + cd process/ext_company_mention_by_map_company_mention
+2016-11-28 11:55:08.013489 + export DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_company_mention_by_map_company_mention
+2016-11-28 11:55:08.013503 + DEEPDIVE_CURRENT_PROCESS_NAME=process/ext_company_mention_by_map_company_mention
+2016-11-28 11:55:08.013516 + export DEEPDIVE_LOAD_FORMAT=tsv
+2016-11-28 11:55:08.013528 + DEEPDIVE_LOAD_FORMAT=tsv
+2016-11-28 11:55:08.013544 + deepdive compute execute 'input_sql= SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2016-11-28 11:55:08.013559 FROM sentences R0
+2016-11-28 11:55:08.013572         
+2016-11-28 11:55:08.013585           ' 'command="$DEEPDIVE_APP"/udf/map_company_mention.py' output_relation=company_mention
+2016-11-28 11:55:08.040893 Executing with the following configuration:
+2016-11-28 11:55:08.041016  DEEPDIVE_NUM_PROCESSES=23
+2016-11-28 11:55:08.041032  DEEPDIVE_NUM_PARALLEL_UNLOADS=1
+2016-11-28 11:55:08.041045  DEEPDIVE_NUM_PARALLEL_LOADS=1
+2016-11-28 11:55:08.041069  output_relation_tmp=dd_tmp_company_mention
+2016-11-28 11:55:08.041082 
+2016-11-28 11:55:08.203246 NOTICE:  table "company_mention" does not exist, skipping
+2016-11-28 11:55:08.207050 CREATE TABLE
+2016-11-28 11:55:08.468662 CREATE TABLE
+2016-11-28 11:55:08.652344 unloading to feed_processes-1: ' SELECT R0.doc_id AS "sentences.R0.doc_id", R0.sentence_index AS "sentences.R0.sentence_index", R0.tokens AS "sentences.R0.tokens", R0.ner_tags AS "sentences.R0.ner_tags"
+2016-11-28 11:55:08.652461 FROM sentences R0
+2016-11-28 11:55:08.652476         
+2016-11-28 11:55:08.652490           '
+2016-11-28 11:55:08.654213 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.654364 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.654494 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.656719 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.656791 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.656806 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657067 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657185 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657203 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657390 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657521 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657640 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657656 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657669 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657682 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.657979 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.658159 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.658182 bash: /home/ehsan/company/udf/map_company_mention.py: Permission denied
+2016-11-28 11:55:08.658343 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5169) - No such process
+2016-11-28 11:55:08.658364 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5171) - No such process
+2016-11-28 11:55:08.658385 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5172) - No such process
+2016-11-28 11:55:08.658399 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5173) - No such process
+2016-11-28 11:55:08.658412 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5174) - No such process
+2016-11-28 11:55:08.658428 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5175) - No such process
+2016-11-28 11:55:08.658448 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5176) - No such process
+2016-11-28 11:55:08.658469 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5177) - No such process
+2016-11-28 11:55:08.658489 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5178) - No such process
+2016-11-28 11:55:08.658506 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5179) - No such process
+2016-11-28 11:55:08.658522 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5180) - No such process
+2016-11-28 11:55:08.658539 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5181) - No such process
+2016-11-28 11:55:08.658556 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5184) - No such process
+2016-11-28 11:55:08.658572 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5185) - No such process
+2016-11-28 11:55:08.658589 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5186) - No such process
+2016-11-28 11:55:08.658602 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5187) - No such process
+2016-11-28 11:55:08.658615 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5188) - No such process
+2016-11-28 11:55:08.658628 /home/ehsan/local/util/compute-driver/local/compute-execute: line 140: kill: (5190) - No such process
+2016-11-28 11:55:08.661825 [ERROR] command='"$DEEPDIVE_APP"/udf/map_company_mention.py': PID 5169: finished with non-zero exit status (0)
+2016-11-28 11:55:08.662046 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5170 Terminated              DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2016-11-28 11:55:08.662069 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5182 Terminated              DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2016-11-28 11:55:08.662089 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5183 Terminated              DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2016-11-28 11:55:08.662108 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5189 Terminated              DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2016-11-28 11:55:08.662127 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5191 Terminated              DEEPDIVE_CURRENT_PROCESS_INDEX=$i bash -c "$command" < process-$i.input > process-$i.output
+2016-11-28 11:55:08.662147 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5195 Terminated              mkmimo process-*.output \> output_computed-*
+2016-11-28 11:55:08.662163 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5196 Terminated              deepdive-load "$output_relation_tmp" output_computed-*
+2016-11-28 11:55:08.662179 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5200 Terminated              deepdive-db unload "$input_sql" "$DEEPDIVE_LOAD_FORMAT" feed_processes-*
+2016-11-28 11:55:08.662195 /home/ehsan/local/util/compute-driver/local/compute-execute: line 138:  5202 Terminated              mkmimo feed_processes-* \> process-*.input
